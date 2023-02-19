@@ -2,7 +2,10 @@
 <resources>
     <!-- Loader -->
     <string name="loader_text">This may take a while</string>
-    <!--  -->
+    <!-- Error -->
+    <string name="error_header">Whoops, we couldn\'t load the data!</string>
+    <string name="error_code_prefix">Error code:\u0020</string>
+    <string name="refresh">Refresh</string>
     <!--  -->
     <!--  -->
     <!--  -->
