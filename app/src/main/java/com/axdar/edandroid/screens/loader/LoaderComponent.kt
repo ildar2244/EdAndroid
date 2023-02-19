@@ -1,4 +1,4 @@
-package com.axdar.edandroid.loader
+package com.axdar.edandroid.screens.loader
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
