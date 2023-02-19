@@ -11,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -24,16 +25,27 @@ import com.axdar.edandroid.ui.theme.EdAndroidTheme
 private fun LoaderComponentPreview() {
     EdAndroidTheme {
         LoaderComponent(Modifier.fillMaxSize())
-//        LoaderComponent(Modifier.size(width = 200.dp, height = 400.dp))
+        /*LoaderComponent(
+            Modifier.size(width = 200.dp, height = 400.dp),
+            useTransparentBackground = true
+        )*/
 //        LoaderComponentWithoutSurface()
     }
 }
 
 @Composable
 private fun LoaderComponent(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    useTransparentBackground: Boolean = false
 ) {
-    Surface(modifier) {
+    Surface(
+        color = if (useTransparentBackground) {
+            Color.Black.copy(alpha = 0.3f)
+        } else {
+            MaterialTheme.colors.surface
+        },
+        modifier = modifier
+    ) {
         Box(contentAlignment = Alignment.Center) {
             CircularProgressIndicator()
             Text(
